@@ -44,7 +44,7 @@ d3.csv("trafficdeaths.csv", type, function(error, data) {
 
 	// copy data and then sort by count
 	barDataByDeaths = data.slice();
-	barDataByDeaths = barDataByCount.sort(function(a,b) { return d3.ascending(a.Deaths, b.Deaths)});
+	barDataByDeaths = barDataByDeath.sort(function(a,b) { return d3.ascending(a.Deaths, b.Deaths)});
 	
 	// copy data and then sort by name
 	barDataByName = data.slice();
