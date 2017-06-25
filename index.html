@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+
+.bar {
+  fill: #9b111e;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 70px;					
+    height: 50px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightgrey;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;
+}
+</style>
+<title>U.S. Motor Fatalities by State in 2015</title>
+<body>
+<a href = "designs.html">Back</a>
+<h3>U.S. Motor Fatalities by State in 2015</h3>
+<p>Source: <a href = "http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview">IIHS/HLDI: Population, fatal motor vehicle crashes, motor vehicle crash deaths and motor vehicle crash death rates per state, 2015</a></p>
+<svg class="chart"></svg>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src = "histogram.js"></script>
+</body>
+
+</html>
