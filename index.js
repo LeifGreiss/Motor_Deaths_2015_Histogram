@@ -71,7 +71,7 @@ d3.select("svg")
 			chart.selectAll("text").remove();
 			
 			// create new bars sorted by count
-			create(barDataByCount.reverse());
+			create(barDataByDeaths.reverse());
 			
 		}
 		
