@@ -109,7 +109,7 @@ function create(data) {
 		.attr("x", width / 2 ) // positions text at half of chart width
         .attr("y",  height + margin.bottom ) // positions text below bottom margin
 		.style("text-anchor", "middle") // center text
-		.text("Location")
+		.text("State")
 	   
     // y axis
     chart.append("g")
@@ -141,7 +141,7 @@ function create(data) {
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.html(d.State + "<br/>" + "Population: " + d.Population + "<br/>" + "Fatal Crashes: " + d.Fatalcrashes + "<br/>" + "Deaths: " + d.Deaths + "<br/>" + "Deaths per 100,000 population: " + d.Deathspopulation)	
+            div.html(d.State + "<br/>" + "Population: " + d.Population + "<br/>" + "Fatal Crashes: " + d.Fatalcrashes + "<br/>" + "Deaths: " + d.Deaths)	
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");})
 		//Creates mouseout function that makes the tooltip disappear
