@@ -34,21 +34,21 @@ var div = d3.select("body").append("div")
     .style("opacity", 0);
 
 	
-var barDataByName = []; // data sorted by name
-var barDataByDeaths = []; // data sorted by count
+var barDataByName = []; // data sorted by Name
+var barDataByDeaths = []; // data sorted by Deaths
 		
 		
 
 //read data from file
 d3.csv("trafficdeaths.csv", type, function(error, data) {
 
-	// copy data and then sort by count
+	// copy data and then sort by Deaths
 	barDataByDeaths = data.slice();
 	barDataByDeaths = barDataByDeaths.sort(function(a,b) { return d3.ascending(a.Deaths, b.Deaths)});
 	
-	// copy data and then sort by name
+	// copy data and then sort by Name
 	barDataByName = data.slice();
-	barDataByName = barDataByName.sort(function(a,b) { return d3.ascending(a.name, b.name)});
+	barDataByName = barDataByName.sort(function(a,b) { return d3.ascending(a.Name, b.Name)});
 	
 	//calls create function
 	create(data);
@@ -80,7 +80,7 @@ d3.select("svg")
 			chart.selectAll(".bar").remove();
 			chart.selectAll("text").remove();
 			
-			//create new bars sorted by name
+			//create new bars sorted by Name
 			create(barDataByName.reverse());
 		}
 		
@@ -95,7 +95,7 @@ function type(d) {
 function create(data) {
 	
 	//define the domains of x and y dimensions
-    x.domain(data.map(function(d) { return d.name; }));
+    x.domain(data.map(function(d) { return d.Name; }));
     y.domain([0, d3.max(data, function(d) { return d.Deaths; })]);
 
     // x axis
@@ -132,10 +132,10 @@ function create(data) {
 		.data(data)
 		.enter().append("rect")
 		.attr("class", "bar")
-		.attr("x", function(d) { return x(d.name); }) //x position
+		.attr("x", function(d) { return x(d.Name); }) //x position
 		.attr("y", function(d) { return y(d.Deaths); })//y position
 		.attr("height", function(d) { return height - y(d.Deaths); })//size of rectangle
-		.attr("width", x.rangeBand()) //width
+		.attr("width", x.rangeBand()-2) //width
 		//Creates the mouseover function that spawns the tooltip
 		 .on("mouseover", function(d) {		
             div.transition()		
