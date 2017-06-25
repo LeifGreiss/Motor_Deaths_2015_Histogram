@@ -141,7 +141,7 @@ function create(data) {
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div.html(d.State + "<br/>" + "Population: " + d.Population + "<br/>" + "Fatal Crashes: " + d.Fatalcrashes + "<br/>" + "Deaths: " + d.Deaths)	
+            div.html(d.State + "<br/>" + "Population: " + d.Population + "<br/>" + "Fatal Crashes: " + d.Fatalcrashes + "<br/>" + "Deaths: " + d.Deaths + "<br/>" + "Deaths Per 100,000 Population: " + d.dbp)	
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");})
 		//Creates mouseout function that makes the tooltip disappear
